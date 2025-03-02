@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 try{
-    mongoose.connect('mongodb://localhost:27017');
+    mongoose.connect('mongodb://localhost:27017/patym-clone');
 
 }catch (err){
     console.log(err);
