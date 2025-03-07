@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 try{
-    mongoose.connect('mongodb://localhost:27017/patym-clone');
+    mongoose.connect('mongodb+srv://aaditya:DBBvydKF6UE660WB@cluster0.r3thrl3.mongodb.net/patym-clone');
 
 }catch (err){
     console.log(err);
@@ -26,8 +26,23 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+const accountsSchema = new mongoose.Schema({
+    userId : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
+    balance: {
+        type: Number ,
+        required: true,
+    }
+})
+
+
+const Account = mongoose.model('Account',accountsSchema);
 const User = mongoose.model('User', userSchema);
 
 module.exports = {
-    User 
+    User ,
+    Account
 }
