@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+
 
 try{
-    mongoose.connect('mongodb+srv://aaditya:DBBvydKF6UE660WB@cluster0.r3thrl3.mongodb.net/patym-clone');
+    mongoose.connect(process.env.MONGO_URL);
 
 }catch (err){
     console.log(err);
