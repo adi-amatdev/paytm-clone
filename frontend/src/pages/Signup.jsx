@@ -27,7 +27,7 @@ const Signup = () => {
     });
     localStorage.setItem("token",response.data.token);
     if(response.status === 200){
-        setTimeout(()=>{navigate('/sigin')},400)
+        setTimeout(()=>{navigate('/signin')},400)
     }
   }
   
